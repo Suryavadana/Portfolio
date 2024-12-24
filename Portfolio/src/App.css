@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial,  sans-serif;
 }
@@ -22,4 +22,97 @@ ul{
 
 section{
   padding: 50px;
+} */
+/* Global styling for the entire page */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-image: url('./assets/images/gal.jpg');
+  background-size: cover; /* Ensures the background image covers the whole viewport */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  color: white; /* Text color for readability on dark backgrounds */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* Prevent horizontal scroll if the background image causes overflow */
+}
+
+/* Apply full height and scrollable content */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Overlay for readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+  z-index: -1; /* Ensures the overlay is behind the content */
+}
+
+/* Transparent sections styling */
+section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: transparent; /* Remove the background */
+  position: relative; /* Ensure the sections are on top of the background */
+  animation: fadeIn 1s ease-out;
+}
+
+/* Add padding to sections for spacing */
+section h2, section p {
+  margin: 10px 0;
+}
+
+/* Animations for the sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeIn 1s ease-out;
+}
+
+.fade-left {
+  animation: fadeIn 1s ease-out;
+  animation-delay: 0.3s;
+}
+
+.fade-right {
+  animation: fadeIn 1s ease-out;
+  animation-delay: 0.5s;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

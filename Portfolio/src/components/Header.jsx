@@ -3,6 +3,9 @@ import '../styles/Header.css';
 const Header = () => {
   return (
     <header className='header'>
+       <div className="header-name">
+        <h1>Surya Vadana | WEB DEVELOPER</h1>
+      </div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>

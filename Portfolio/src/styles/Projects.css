@@ -1,58 +1,126 @@
+/* Projects.css */
+
 .projects {
-    padding: 50px 0;
-    text-align: center;
+  background: #f4f4f9; /* Light background for the projects section */
+  color: #333; /* Dark text for readability */
+  padding: 80px 20px; /* Generous padding for spacious design */
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-container h2 {
+  font-size: 2.5rem; /* Larger heading */
+  color: #6a4c93; /* Soft purple color for the heading */
+  font-weight: 700;
+  margin-bottom: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects-container h2:hover {
+  font-size: 2.8rem;
+  color: #f39c12;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px; /* Space between project cards */
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
+}
+
+.project-card h3:hover {
+  color: #f39c12; /* Change text color on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
+}
+
+.project-card p:hover {
+  color: #f39c12; /* Change text color on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.project-link {
+  color: #6a4c93;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+  color: #f39c12;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack the projects vertically on small screens */
   }
-  
-  .projects h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
+
   .project-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s;
+    padding: 15px; /* Adjust padding for mobile */
   }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-  }
-  
+
   .project-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 180px; /* Slightly smaller image height on mobile */
   }
-  
+
+  .projects-container h2 {
+    font-size: 2rem; /* Adjust heading size for mobile */
+  }
+
   .project-card h3 {
-    font-size: 1.5rem;
-    margin-top: 15px;
+    font-size: 1.3rem; /* Adjust project title size */
   }
-  
+
   .project-card p {
-    font-size: 1rem;
-    color: #555;
-    margin: 15px 0;
+    font-size: 0.95rem; /* Slightly smaller text for mobile */
   }
-  
-  .project-link {
-    font-size: 1rem;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .project-link:hover {
-    text-decoration: underline;
-  }
-  
+}
