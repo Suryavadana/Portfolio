@@ -1,0 +1,149 @@
+/* Global Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../assets/images/background.jpg'); /* Background Image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  /* ProjectDetails Container */
+  .project-details {
+    display: flex;
+    flex-wrap: wrap; /* Wrap sections into multiple rows if necessary */
+    padding: 20px;
+    color: #333333; /* Set text color to dark gray */
+    width: 95vw; /* Adjust width to fit the screen while leaving slight padding */
+    height: 90vh; /* Allow height to expand while fitting the viewport */
+    margin: auto; /* Center the container */
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling for this section only */
+    border-radius: 10px; /* Add subtle rounding for aesthetics */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    background-image: url('../assets/images/background.jpg'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fix the background while content scrolls */
+  }
+  
+  /* Scrollbar Styling */
+  .project-details::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .project-details::-webkit-scrollbar-thumb {
+    background: #333333; /* Scrollbar thumb color to match text */
+    border-radius: 4px;
+  }
+  
+  .project-details::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Scrollbar track color */
+  }
+  
+  /* Title Styling */
+  .project-details h1 {
+    font-size: 2.5rem;
+    color: #333333; /* Dark gray for the title */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    animation: slideDown 0.5s ease-in-out; /* Smooth entrance from top */
+  }
+  
+  /* Key Sections Styling */
+  .project-section {
+    flex: 1 1 45%; /* Display two sections side by side */
+    padding: 15px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333333; /* Dark gray for section headings */
+    animation: slideLeft 0.5s ease-in-out; /* Smooth entrance from left */
+  }
+  
+  .project-section ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .project-section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333; /* Dark gray for list items */
+    animation: fadeIn 0.3s ease-in-out; /* Points appear one by one */
+  }
+  
+  /* GitHub Link Styling */
+  .project-details a {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    width: fit-content;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .project-details a:hover {
+    background-color: #0056b3; /* Darken on hover */
+    transform: scale(1.1); /* Slight scale-up for interaction */
+  }
+  
+  /* Keyframe Animations */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .project-details {
+      flex-direction: column; /* Stack sections vertically on smaller screens */
+      height: auto; /* Adjust height to accommodate stacked layout */
+    }
+  
+    .project-section {
+      flex: 1 1 100%; /* Make each section full width */
+    }
+  }

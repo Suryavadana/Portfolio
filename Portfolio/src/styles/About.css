@@ -1,117 +1,78 @@
-/* About Section Styles */
+/* About Section Styling */
 .about {
-  background: #F0F4F8; /* Light grayish-blue background for a clean look */
-  color: #333333; /* Dark gray text color for readability */
-  padding: 80px 20px; /* Add extra padding to make it spacious */
+  padding: 80px 20px;
+  color: #2e3b4e; /* Consistent with landing page text color */
+  text-align: center;
   position: relative;
-  overflow: hidden;
-}
-
-.about-container {
-  display: flex;
-  align-items: center; /* Vertically align the items */
-  justify-content: flex-start; /* Align items to the left */
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 50px; /* Add space between the content and image */
-}
-
-.about-header {
-  display: flex;
-  align-items: center; /* Center the heading and image vertically */
-  width: 100%;
-  justify-content: flex-start; /* Align to the left */
-}
-
-.about-header h2 {
-  font-size: 3rem; /* Make the heading large and prominent */
-  font-weight: 700;
-  color: #6A4C93; /* Soft purple color for headings */
-  margin-right: 70px; /* Space between heading and image */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
-  cursor: pointer; /* Change cursor to pointer for interactivity */
-}
-
-.about-header h2:hover {
-  font-size: 3.2rem; /* Increase the font size on hover */
-  color: #F39C12; /* Change heading color to yellow on hover */
-  transform: scale(1.05); /* Slight zoom-in effect */
-}
-
-.about-image {
-  width: 100px; /* Image width (vertical oval) */
-  height: 100px; /* Image height (vertical oval) */
-  border-radius: 50%; /* Circular image */
-  overflow: hidden;
-  border: 5px solid #9B4F96; /* Purple border around image */
-  background: linear-gradient(135deg, #9B4F96, #6A4C93); /* Purple gradient background */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Soft shadow */
-}
-
-.about-image:hover {
-  transform: scale(1.1); /* Zoom-in effect on hover */
-  background: linear-gradient(135deg, #F39C12, #F1C40F); /* Change background to yellow on hover */
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2); /* Add a more pronounced shadow */
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image fits the oval shape */
-  border-radius: 50%; /* Circular image shape */
-}
-
-.about-content {
-  flex: 1;
-  display: flex;
+  z-index: 1;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-image: url('../assets/images/background.jpg'); /* Background Image */
+  background-size: cover; /* Cover the entire section */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex; /* Flexbox for vertical centering */
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  overflow: hidden; /* Prevent overflow */
 }
 
-.about-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555555; /* Slightly lighter gray for the body text */
-  font-weight: 400;
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #2e3b4e; /* Consistent header color */
+  animation: slideInFromTop 1s ease-out; /* Add animation for consistency */
+}
+
+.about p {
+  font-size: 1.25rem; /* Larger for readability */
+  line-height: 1.8; /* Better spacing */
+  max-width: 700px; /* Limit width for readability */
+  margin: 20px auto; /* Center the paragraph */
+  color: #555; /* Muted color for contrast */
+  text-align: justify; /* Align the text for better reading */
+  animation: fadeIn 1.5s ease-out; /* Add fade-in animation */
+}
+
+/* About Section Profile Image Styling */
+.about .about-image img {
+  width: 150px; /* Fixed size for profile image */
+  height: 150px;
+  border-radius: 50%; /* Circular profile image */
+  object-fit: cover; /* Ensure the image fits the circle properly */
   margin-top: 20px;
-  text-align: justify; /* Justify text for better readability */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  border: 5px solid #fff; /* Add a border for visibility */
+  animation: scaleIn 1s ease-out;
 }
 
-.about-content p:hover {
-  transform: translateX(5px); /* Slight shift effect on hover */
-  color: #F39C12; /* Change text color to yellow on hover */
+/* Animations */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column; /* Stack image and text vertically on small screens */
-    text-align: center;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-
-  .about-header {
-    flex-direction: column; /* Stack heading and image vertically on small screens */
-    align-items: center;
+  100% {
+    opacity: 1;
   }
+}
 
-  .about-image {
-    width: 120px; /* Slightly smaller image on mobile */
-    height: 120px; /* Maintain oval shape */
-    margin-bottom: 20px; /* Margin between the image and the text */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
   }
-
-  .about-content {
-    width: 80%; /* More width for text on mobile */
-  }
-
-  .about-header h2 {
-    font-size: 2rem; /* Adjust heading size on mobile */
-  }
-
-  .about-content p {
-    font-size: 1rem; /* Slightly smaller text for mobile */
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

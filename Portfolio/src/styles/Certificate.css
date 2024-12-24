@@ -1,0 +1,47 @@
+/* Resetting global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Keyframes for heading animation */
+@keyframes slideFromTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Styling for the certification section */
+.certification {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Optional background */
+}
+
+/* Certification container */
+.certification-container {
+    text-align: center;
+}
+
+/* Certificate image */
+.certificate-image {
+    width: 200%; /* Increase the width by 50% */
+    max-width: 700px; /* Optional: set a maximum width */
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

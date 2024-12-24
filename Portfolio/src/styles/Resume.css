@@ -1,0 +1,47 @@
+/* Styling for Resume Section */
+.resume-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  /* Resume Heading */
+  .resume-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Resume Description */
+  .resume-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  /* Download Button */
+  .resume-download-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-download-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Download Link Styling */
+  .resume-download-link {
+    text-decoration: none;
+  }
+  

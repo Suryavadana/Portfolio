@@ -1,126 +1,72 @@
-/* Projects.css */
-
 .projects {
-  background: #f4f4f9; /* Light background for the projects section */
-  color: #333; /* Dark text for readability */
-  padding: 80px 20px; /* Generous padding for spacious design */
-  position: relative;
-  overflow: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 80px 20px;
+  background-image: url('../assets/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-.projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+/* Animation for heading */
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .projects-container h2 {
-  font-size: 2.5rem; /* Larger heading */
-  color: #6a4c93; /* Soft purple color for the heading */
-  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 40px;
-  transition: all 0.3s ease-in-out;
-}
-
-.projects-container h2:hover {
-  font-size: 2.8rem;
-  color: #f39c12;
-  transform: scale(1.05);
-  cursor: pointer;
+  color: #333; /* Dark gray color */
+  animation: slideFromTop 1s ease-out; /* Apply slide-in animation */
+  text-align: center; /* Ensure heading is centered */
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px; /* Space between project cards */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .project-card {
-  background-color: white;
-  border-radius: 12px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  text-align: center; /* Center-align content */
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05); /* Slight scale-up on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
-.project-image {
+.project-card img {
   width: 100%;
-  height: 200px; /* Fixed height for consistency */
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 250px; /* Set a fixed max width for images */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: contain; /* Ensure the entire image fits within the space */
+  margin: 0 auto 15px; /* Center image and add spacing below */
+  border-radius: 10px; /* Slight rounding of corners */
+  background-color: white; /* Add a background to avoid transparency issues */
 }
 
 .project-card h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin: 10px 0;
-  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
-}
-
-.project-card h3:hover {
-  color: #f39c12; /* Change text color on hover */
-  cursor: pointer; /* Change cursor to pointer */
-}
-
-.project-card p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
-}
-
-.project-card p:hover {
-  color: #f39c12; /* Change text color on hover */
-  cursor: pointer; /* Change cursor to pointer */
-}
-
-.project-link {
-  color: #6a4c93;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project-link:hover {
-  text-decoration: underline;
-  color: #f39c12;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Stack the projects vertically on small screens */
-  }
-
-  .project-card {
-    padding: 15px; /* Adjust padding for mobile */
-  }
-
-  .project-image {
-    height: 180px; /* Slightly smaller image height on mobile */
-  }
-
-  .projects-container h2 {
-    font-size: 2rem; /* Adjust heading size for mobile */
-  }
-
-  .project-card h3 {
-    font-size: 1.3rem; /* Adjust project title size */
-  }
-
-  .project-card p {
-    font-size: 0.95rem; /* Slightly smaller text for mobile */
-  }
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: #ffffff; /* White text for contrast */
 }

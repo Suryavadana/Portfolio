@@ -1,0 +1,155 @@
+
+/* Ensure no scrolling on the page */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Disable scrolling */
+    width: 100vw;
+    height: 100vh;
+}
+/* Landing Page CSS */
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-image: url('../assets/images/background.jpg'); /* Background Image */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  overflow: hidden; /* Prevent overflow */
+}
+  
+  .landing-content {
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .landing-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    color: #2e3b4e;
+    animation: slideInFromTop 1s ease-out;
+  }
+  
+  .landing-title {
+    font-size: 1.5rem;
+    color: #555;
+    margin: 10px 0 20px;
+    animation: slideInFromTop 1.2s ease-out 0.2s;
+  }
+  
+  .landing-image-container {
+    margin-top: 40px;
+    position: relative;
+    animation: slideInFromRight 1s ease-out 0.4s;
+  }
+  
+  .landing-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+  }
+  
+  .technologies-container {
+    margin-top: 50px;
+    width: 100%;
+  }
+  
+  .technologies-container h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #2e3b4e;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .logo-container span {
+    opacity: 0; /* Start with logos hidden */
+    transform: translateY(30px); /* Start slightly below */
+    animation: fadeInSequential 1s ease-out forwards;
+  }
+  
+  .logo-container span img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Sequential fade-in animation for logos */
+  @keyframes fadeInSequential {
+    0% {
+      opacity: 0;
+      transform: translateY(30px); /* Start from below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Move to its original position */
+    }
+  }
+  
+  /* Add animation delay for each logo */
+  .technologies-container .logo-container span:nth-child(1) {
+    animation-delay: 0.5s; /* Delay for the first logo */
+  }
+  
+  .technologies-container .logo-container span:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+  
+  .technologies-container .logo-container span:nth-child(3) {
+    animation-delay: 0.9s;
+  }
+  
+  .technologies-container .logo-container span:nth-child(4) {
+    animation-delay: 1.1s;
+  }
+  
+  .technologies-container .logo-container span:nth-child(5) {
+    animation-delay: 1.3s;
+  }
+  
+  .technologies-container .logo-container span:nth-child(6) {
+    animation-delay: 1.5s;
+  }
+  
+  .technologies-container .logo-container span:nth-child(7) {
+    animation-delay: 1.7s;
+  }
+  
+  .technologies-container .logo-container span:nth-child(8) {
+    animation-delay: 1.9s;
+  }
+  
+  /* Animations for the landing page */
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
